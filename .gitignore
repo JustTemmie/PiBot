@@ -1,0 +1,6 @@
+venv
+config.json
+temp/
+logs/
+local_only/
+
