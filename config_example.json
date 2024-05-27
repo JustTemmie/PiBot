@@ -1,19 +1,19 @@
-{    "API_KEYS": {
-        "DISCORD": "TOKEN",
-        "TENOR":  "KEY"
+{
+    "API_KEYS": {
+        "DISCORD": "DISCORD KEY",
+        "TENOR": "TENOR KEY"
     },
 
     "IDENTIFIERS": {
-        "TENOR": "default-identity-key"
+        "TENOR": "TENOR ID"
     },
 
-    "PREFIXES": ["mikumiku", "miku miku", "miku"],
-    "OWNER_IDS": [725539745572323409],
-    "HOST_OWNERS": [725539745572323409, 616228691155877898, 769632057575342081],
-    "TRUSTED_IDS": [725539745572323409, 616228691155877898],
-    "COG_LIST_OVERWRITE": [],
+    "FOLDER_PATHS": {
+        "VIDEOS": "/home/temmie/Network/4tb/NAS/HostSystemVideos/PiBot/"
+    },
     
-    "SHARDS": 1,
+    "OWNER_IDS": [725539745572323409],
+    
     "SYNC_TREE": true,
     "DEVELOPMENT": false,
     "DEVELOPMENT_GUILD": 1016777760305320036
