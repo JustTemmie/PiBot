@@ -10,15 +10,6 @@ def getProgressBar(current, max, width = 20):
 
     return bar
 
-# user still needs to set the title, description, and fields
-def create_embed(ctx, user = None):
-    if user == None:
-        user = ctx.author
-    
-    embed = discord.Embed()
-    embed.colour = user.colour if user.colour != discord.Colour.default() else discord.Colour.light_embed()
-    embed.set_footer(text=f"invoked by {ctx.author.display_name}", icon_url=ctx.author.display_avatar.url)
-    return embed
 
 def format_time(seconds):
     time_table = {

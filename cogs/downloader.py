@@ -11,7 +11,8 @@ class DownloaderCog(commands.Cog):
         self.bot = bot
         
         @bot.tree.context_menu(name="Save Attachments")
-        @app_commands.user_install()
+        @app_commands.allowed_installs(guilds=False, users=True) # users only, no guilds for install
+        @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True) # all allowed
         @commands.is_owner()
         async def download_context_command(interaction: discord.Integration, message: discord.Message) -> None:
             if len(message.attachments) == 0:
