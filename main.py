@@ -1,4 +1,5 @@
 import discord
+from discord.ext import commands
 from discord import app_commands
 
 import logging
@@ -45,7 +46,7 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
-class Bot(discord.Client):
+class Bot(commands.Bot):
     def __init__(self, *args, **kwargs):
         self.config = config
         self.settings = settings
@@ -53,12 +54,14 @@ class Bot(discord.Client):
         self.ready = False
         
         super().__init__(
-            intents=discord.Intents().all(),
+            command_prefix="q",
+            intents=discord.Intents.all(),
             owner_ids=self.config["OWNER_IDS"],
         *args, **kwargs)
 
-        self.tree = app_commands.CommandTree(self)
+        # self.tree = app_commands.CommandTree(self)
         self.start_time = datetime.now()
+        
 
     async def on_ready(self) -> None:
         print(f"Succesfully logged in as {self.user}")
