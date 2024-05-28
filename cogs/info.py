@@ -10,7 +10,7 @@ from datetime import datetime
 
 import libraries.helpers as helpers
 
-class Info(commands.Cog):
+class InfoCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.start_time = time.time()
@@ -68,4 +68,4 @@ class Info(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(Info(bot))
+    await bot.add_cog(InfoCog(bot))

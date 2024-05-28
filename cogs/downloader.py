@@ -29,10 +29,10 @@ class DownloaderCog(commands.Cog):
                 "misc": []
             }
 
-            for folder in folders:
-                media_folder = self.bot.config["FOLDER_PATHS"]["VIDEOS"] + folder
-                if not os.path.exists(media_folder):
-                    os.mkdir(media_folder)
+            # for folder in folders:
+            #     media_folder = self.bot.config["FOLDER_PATHS"]["VIDEOS"] + folder
+            #     if not os.path.exists(media_folder):
+            #         os.mkdir(media_folder)
             
             for attatchment in message.attachments:
                 
