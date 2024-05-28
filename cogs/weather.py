@@ -19,9 +19,6 @@ import libraries.helpers as helpers
 class WeatherCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.start_time = time.time()
-        self.uname = platform.uname()
-
         
         @bot.tree.command(name="weather")
         @app_commands.allowed_installs(guilds=False, users=True)
