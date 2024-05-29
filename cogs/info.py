@@ -17,7 +17,7 @@ class InfoCog(commands.Cog):
         self.uname = platform.uname()
 
         
-        @bot.tree.command(name="server-info")
+        @bot.tree.command(name="pi-info")
         @app_commands.allowed_installs(guilds=False, users=True) # users only, no guilds for install
         @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True) # all allowed
         @commands.is_owner()

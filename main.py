@@ -88,27 +88,6 @@ bot = Bot()
 # miku.tree = discord.app_commands.CommandTree(miku)
 # miku.remove_command("help")
 
-@bot.tree.command(
-    name="nickname",
-    description="heh, hi :3",
-    guild=discord.Object(id=1016777760305320036)
-)
-async def nickname_command(interaction, victim: discord.Member, new_name: str):
-    original_name = victim.display_name
-    await victim.edit(nick=new_name)
-    await interaction.response.send_message(f"renamed {original_name} to {new_name}", ephemeral=True)
-
-@bot.tree.command()
-@app_commands.allowed_installs(guilds=False, users=True) # users only, no guilds for install
-@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True) # all allowed
-async def hello(interaction: discord.Interaction) -> None:
-    await interaction.response.send_message(f"Hello {interaction.user.mention}!")
-
-@bot.tree.command(name="member-info")
-@app_commands.allowed_installs(guilds=False, users=True) # guilds only this time
-@app_commands.allowed_contexts(guilds=True, dms=False, private_channels=False) # only guilds, again
-async def member_info(interaction: discord.Interaction, member: discord.Member) -> None:
-    await interaction.response.send_message(f"Here's what I have on {member.name}...")
 
 
 async def main():
