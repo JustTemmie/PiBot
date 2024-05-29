@@ -23,10 +23,10 @@ class PfpCog(commands.Cog):
         @bot.tree.command(name="pfp")
         @app_commands.allowed_installs(guilds=False, users=True)
         @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
-        async def pfp_command_register(interaction: discord.Interaction, user: discord.User = None, ephemreal: bool = False) -> None:
+        async def pfp_command_register(interaction: discord.Interaction, user: discord.User = None, ephemreal: bool = True) -> None:
             await self.pfp_command(interaction, user, ephemreal)
             
-    async def pfp_command(self, interaction: discord.Interaction, user: discord.User, ephemreal: bool = True):
+    async def pfp_command(self, interaction: discord.Interaction, user: discord.User, ephemreal: bool):
         if not user:
             user = interaction.user
 
@@ -38,7 +38,7 @@ class PfpCog(commands.Cog):
         embed.set_image(url=user.display_avatar.url)
         embed.color = user.colour
 
-        await interaction.response.send_message(embed=embed, view=view)
+        await interaction.response.send_message(embed=embed, view=view, ephemeral=ephemreal)
 
 
 async def setup(bot):

@@ -23,7 +23,7 @@ class WeatherCog(commands.Cog):
         @bot.tree.command(name="weather")
         @app_commands.allowed_installs(guilds=False, users=True)
         @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
-        async def weather_command(interaction: discord.Interaction, location: str = "tromsø", ephemreal: bool = False) -> None:
+        async def weather_command(interaction: discord.Interaction, location: str = bot.config["COMMAND_DEFAULTS"]["WEATHER_LOCATION"], ephemreal: bool = False) -> None:
             location = location.casefold()
             
             yrID = await self.get_yr_ID(location)

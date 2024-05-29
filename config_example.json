@@ -12,6 +12,10 @@
         "VIDEOS": "/home/temmie/Network/4tb/NAS/HostSystemVideos/PiBot/"
     },
     
+    "COMMAND_DEFAULTS": {
+        "WEATHER_LOCATION": "New York"
+    },
+    
     "OWNER_IDS": [725539745572323409],
     
     "SYNC_TREE": true,
